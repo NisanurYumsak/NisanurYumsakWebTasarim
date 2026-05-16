@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sepetim - Nisa'nın Mutfağı</title>
+    <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body>
+
+    <div class="header-menu">
+        <div class="site-baslik">
+            <h2>Nisa'nın Lezzet Mağazası</h2>
+        </div>
+        <div class="linkler">
+            <a href="../index.html">Ana Sayfa</a>
+            <a href="urunler.html">Ürünler</a>
+            <a href="sepet.html">Sepetim</a>
+            <a href="tarifler.html">Tarifler</a>
+            <a href="iletisim.html">İletişim</a>
+        </div>
+    </div>
+
+    <div class="banner">
+        <h1>Alışveriş Sepetim</h1>
+        <p>Sepetinizdeki ürünlerin miktarını değiştirebilir, toplam tutarı görebilirsiniz.</p>
+    </div>
+
+    <div class="sepet">
+        
+        <div class="sepet-item">
+            <span class="urun-adi">Tarçın (80 TL)</span>
+            <div class="adet-kontrol">
+                <button onclick="tarcinDegistir(-1)">-</button>
+                <span id="tarcin-adet-yazi">1</span>
+                <button onclick="tarcinDegistir(1)">+</button>
+            </div>
+        </div>
+
+        <div class="sepet-item">
+            <span class="urun-adi">Kuru Maya (35 TL)</span>
+            <div class="adet-kontrol">
+                <button onclick="mayaDegistir(-1)">-</button>
+                <span id="maya-adet-yazi">1</span>
+                <button onclick="mayaDegistir(1)">+</button>
+            </div>
+        </div>
+
+        <hr style="border: 0; border-top: 1px solid #b5838d; margin: 20px 0;">
+
+        <div class="toplam-alani">
+            <h3>Toplam Tutar: <span id="toplam-fiyat-yazi">115 TL</span></h3>
+        </div>
+
+        <button class="gonder-buton" style="margin-top: 15px;" onclick="alert('Siparişiniz başarıyla alındı!')">Alışverişi Tamamla</button>
+    </div>
+
+    <div class="alt-footer">
+        <p>Web Tasarımı ve İnternet Programlama Dersi Ödevi &copy; 2026</p>
+    </div>
+
+    <script src="../scripts/myscript.js"></script>
+</body>
+</html>

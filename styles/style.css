@@ -1,0 +1,259 @@
+/*Temel sayfa ayarları*/
+body {
+    background-color: #faf5f0;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Üst Menü / Navbar */
+.header-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #cdb4db; /* Pastel tonu */
+    padding: 15px;
+    border-bottom: 2px solid #b5838d;
+}
+
+.site-baslik h2 {
+    margin: 0;
+    color: #5e503f;
+}
+
+.linkler a {
+    color: #5e503f;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.linkler a:hover {
+    color: #e56b6f; 
+}
+
+/* Giriş */
+.banner {
+    background-color: #ffcdb2;
+    text-align: center;
+    padding: 40px 10px;
+    margin-bottom: 20px;
+}
+
+.banner h1 {
+    color: #6d597a;
+    margin-bottom: 10px;
+}
+
+/* İçerik Alanı */
+.icerik-alani {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap; 
+}
+
+/* Ürün ve Tarif Kartları */
+.urun-kart {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    width: 300px;
+    padding: 15px;
+    text-align: center;
+}
+
+.urun-kart img {
+    width: 100%;
+    height: 200px;
+    border-radius: 3px;
+    object-fit: cover;
+}
+
+.urun-kart h3 {
+    color: #6d597a;
+    margin: 10px 0;
+}
+
+.urun-kart p {
+    font-size: 14px;
+    color: #555555;
+}
+
+.urun-kart .fiyat {
+    font-weight: bold;
+    color: #e56b6f;
+    font-size: 18px;
+}
+
+.urun-kart .incele-buton {
+    display: inline-block;
+    background-color: #6d597a;
+    color: white;
+    padding: 8px 15px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.urun-kart .incele-buton:hover {
+    background-color: #b5838d;
+}
+
+/* Tarif Detay Sayfası Tasarımı */
+.tarif-detay-konteyner {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+.tarif-detay-konteyner h1 {
+    color: #6d597a;
+    margin-bottom: 10px;
+}
+
+.tarif-detay-konteyner hr {
+    border: 0;
+    border-top: 1px solid #b5838d;
+    margin: 15px 0;
+}
+
+.tarif-detay-konteyner h3 {
+    color: #5e503f;
+    margin-top: 20px;
+}
+
+.tarif-detay-konteyner ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.tarif-detay-konteyner p {
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+/* İletişim Alanı */
+.iletisim-linki {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.iletisim-linki a {
+    color: #e56b6f;
+    font-weight: bold;
+}
+
+/* Footer Kısmı */
+.alt-footer {
+    background-color: #cdb4db;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    border-top: 2px solid #b5838d;
+    color: #5e503f;
+}/* İletişim Formu Tasarımı */
+.form-konteyner {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+.form-grup {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-grup label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #5e503f;
+    font-size: 14px;
+}
+
+.form-grup input, 
+.form-grup textarea {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.gonder-buton {
+    background-color: #6d597a;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+}
+
+.gonder-buton:hover {
+    background-color: #b5838d;
+}/* Sepet Sayfası Tasarımı */
+.sepet-konteyner {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+.sepet-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px dashed #cccccc;
+}
+
+.urun-adi {
+    font-weight: bold;
+    color: #5e503f;
+}
+
+.adet-kontrol {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.adet-kontrol button {
+    background-color: #6d597a;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.adet-kontrol button:hover {
+    background-color: #b5838d;
+}
+
+.adet-kontrol span {
+    font-weight: bold;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.toplam-alani {
+    text-align: right;
+    color: #e56b6f;
+    font-size: 18px;
+}
