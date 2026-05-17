@@ -75,7 +75,11 @@
                             </div>
                         </div>
                         <div style="display: flex; align-items: center; gap: 20px;">
-                            <div style="font-weight: bold; color: #5e503f;">Adet: ${urun.adet}</div>
+                            <div style="display: flex; align-items: center; gap: 10px; background-color: #f4f1de; padding: 5px 10px; border-radius: 20px;">
+                                <button onclick="adetDegistir('${urun.id}', -1)" style="background: none; border: none; font-size: 18px; font-weight: bold; color: #e56b6f; cursor: pointer; padding: 0 5px;">-</button>
+                                <span style="font-weight: bold; color: #5e503f; min-width: 20px; text-align: center;">${urun.adet}</span>
+                                <button onclick="adetDegistir('${urun.id}', 1)" style="background: none; border: none; font-size: 18px; font-weight: bold; color: #2a9d8f; cursor: pointer; padding: 0 5px;">+</button>
+                            </div>
                             <div style="font-weight: bold; color: #6d597a; min-width: 80px; text-align: right;">${urunToplam} TL</div>
                         </div>
                     </div>
@@ -84,6 +88,21 @@
 
             sepetListesiKutusu.innerHTML = htmlIcerik;
             toplamKutusu.innerText = genelToplam + ' TL';
+        }
+
+        function adetDegistir(urunId, miktar) {
+            let sepet = JSON.parse(localStorage.getItem('sepet')) || [];
+            const urun = sepet.find(item => item.id === urunId);
+
+            if (urun) {
+                urun.adet += miktar;
+
+                if (urun.adet <= 0) {
+                    sepet = sepet.filter(item => item.id !== urunId);
+                }
+                localStorage.setItem('sepet', JSON.stringify(sepet));
+                sepetiListele();
+            }
         }
 
         function sepetiTemizle() {
@@ -95,6 +114,3 @@
 
         window.onload = sepetiListele;
     </script>
-
-</body>
-</html>
