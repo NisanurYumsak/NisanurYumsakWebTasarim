@@ -32,64 +32,93 @@
             <img src="../img/tarcin.jpg" alt="Tarçın">
             <h3>Tarçın (100g)</h3>
             <p class="fiyat">80 TL</p>
-            <a href="#" class="incele-buton">Sepete Ekle</a>
+            <button class="incele-buton sepete-ekle-btn" data-id="1" data-ad="Tarçın (100g)" data-fiyat="80" data-resim="../img/tarcin.jpg" style="border: none; cursor: pointer;">Sepete Ekle</button>
         </div>
 
         <div class="urun-kart">
             <img src="../img/maya.jpg" alt="Paket Maya">
             <h3>Kuru Maya</h3>
             <p class="fiyat">35 TL</p>
-            <a href="#" class="incele-buton">Sepete Ekle</a>
+            <button class="incele-buton sepete-ekle-btn" data-id="2" data-ad="Kuru Maya" data-fiyat="35" data-resim="../img/maya.jpg" style="border: none; cursor: pointer;">Sepete Ekle</button>
         </div>
 
         <div class="urun-kart">
             <img src="../img/seker.jpg" alt="Toz Şeker">
             <h3>Toz Şeker (500g)</h3>
             <p class="fiyat">65 TL</p>
-            <a href="#" class="incele-buton">Sepete Ekle</a>
-        </div><div class="urun-kart">
-            <img src="../img/sut.jpg" alt="Organik Süt">
-            <h3>Organik Tam Yağlı Süt (1L)</h3>
+            <button class="incele-buton sepete-ekle-btn" data-id="3" data-ad="Toz Şeker (500g)" data-fiyat="65" data-resim="../img/seker.jpg" style="border: none; cursor: pointer;">Sepete Ekle</button>
+        </div>
+        
+        <div class="urun-kart">
+            <img src="../img/sut.jpg" alt="Süt">
+            <h3>Süt (1L)</h3>
             <p class="fiyat">40 TL</p>
-            <a href="#" class="incele-buton">Sepete Ekle</a>
+            <button class="incele-buton sepete-ekle-btn" data-id="4" data-ad="Süt (1L)" data-fiyat="40" data-resim="../img/sut.jpg" style="border: none; cursor: pointer;">Sepete Ekle</button>
         </div>
 
         <div class="urun-kart">
             <img src="../img/vanilin.jpg" alt="Şekerli Vanilin">
             <h3>Şekerli Vanilin (5'li Paket)</h3>
             <p class="fiyat">25 TL</p>
-            <a href="#" class="incele-buton">Sepete Ekle</a>
+            <button class="incele-buton sepete-ekle-btn" data-id="5" data-ad="Şekerli Vanilin (5'li Paket)" data-fiyat="25" data-resim="../img/vanilin.jpg" style="border: none; cursor: pointer;">Sepete Ekle</button>
         </div>
 
         <div class="urun-kart">
             <img src="../img/labne.jpg" alt="Labne Peyniri">
             <h3>Labne Peyniri (400g)</h3>
             <p class="fiyat">75 TL</p>
-            <a href="#" class="incele-buton">Sepete Ekle</a>
+            <button class="incele-buton sepete-ekle-btn" data-id="6" data-ad="Taze Labne Peyniri (400g)" data-fiyat="75" data-resim="../img/labne.jpg" style="border: none; cursor: pointer;">Sepete Ekle</button>
         </div>
 
         <div class="urun-kart">
             <img src="../img/kabartma_tozu.jpg" alt="Hamur Kabartma Tozu">
             <h3>Hamur Kabartma Tozu (5'li)</h3>
             <p class="fiyat">25 TL</p>
-            <a href="#" class="incele-buton">Sepete Ekle</a>
+            <button class="incele-buton sepete-ekle-btn" data-id="7" data-ad="Hamur Kabartma Tozu (5'li)" data-fiyat="25" data-resim="../img/kabartma_tozu.jpg" style="border: none; cursor: pointer;">Sepete Ekle</button>
         </div>
 
         <div class="urun-kart">
             <img src="../img/damla_cikolata.jpg" alt="Damla Çikolata">
             <h3>Damla Çikolata (250g)</h3>
             <p class="fiyat">90 TL</p>
-            <a href="#" class="incele-buton">Sepete Ekle</a>
+            <button class="incele-buton sepete-ekle-btn" data-id="8" data-ad="Damla Çikolata (250g)" data-fiyat="90" data-resim="../img/damla_cikolata.jpg" style="border: none; cursor: pointer;">Sepete Ekle</button>
         </div>
 
         <div class="urun-kart">
             <img src="../img/misir.jpg" alt="Tatlı Taneli Mısır">
             <h3>Tatlı Taneli Mısır (Konserve)</h3>
             <p class="fiyat">45 TL</p>
-            <a href="#" class="incele-buton">Sepete Ekle</a>
+            <button class="incele-buton sepete-ekle-btn" data-id="9" data-ad="Tatlı Taneli Mısır (Konserve)" data-fiyat="45" data-resim="../img/misir.jpg" style="border: none; cursor: pointer;">Sepete Ekle</button>
         </div>
 
     </div>
+    
+    <script>
+        document.querySelectorAll('.sepete-ekle-btn').forEach(buton => {
+            buton.addEventListener('click', function() {
+                const urun = {
+                    id: this.getAttribute('data-id'),
+                    ad: this.getAttribute('data-ad'),
+                    fiyat: parseFloat(this.getAttribute('data-fiyat')),
+                    resim: this.getAttribute('data-resim'),
+                    adet: 1
+                };
+
+                let sepet = JSON.parse(localStorage.getItem('sepet')) || [];
+                const varMi = sepet.find(item => item.id === urun.id);
+
+                if (varMi) {
+                    varMi.adet += 1; 
+                } else {
+                    sepet.push(urun); 
+                }
+
+                localStorage.setItem('sepet', JSON.stringify(sepet));
+
+                alert(`${urun.ad} sepetinize eklendi!`);
+            });
+        });
+    </script>
 
     <div class="alt-footer">
         <p>Web Tasarımı ve İnternet Programlama Dersi Ödevi &copy; 2026</p>
