@@ -1,21 +1,15 @@
-/* ==========================================
-   1. GENEL SAYFA AYARLARI
-   ========================================== */
+
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f7f5f0; /* Yumuşak krem/beyaz tonu */
+    background-color: #f7f5f0; 
 }
-
-/* ==========================================
-   2. HEADER VE NAVBAR (Madde 4 & 5)
-   ========================================== */
 .header-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #6d597a; /* Soft mor/pembe tonu */
+    background-color: #6d597a; 
     padding: 15px 30px;
     color: white;
 }
@@ -33,16 +27,11 @@ body {
     font-size: 15px;
 }
 
-/* Üzerine gelince veya aktif sayfadayken soft pembe olsun */
 .linkler a:hover, .linkler a.aktif {
     color: #ffb6c1; 
 }
-
-/* ==========================================
-   3. BANNER ALANI
-   ========================================== */
 .banner {
-    background-color: #ffb6c1; /* Soft pembe arka plan */
+    background-color: #ffb6c1; 
     color: #4a3f4b;
     text-align: center;
     padding: 80px 20px;
@@ -57,10 +46,6 @@ body {
     margin: 0;
     font-size: 18px;
 }
-
-/* ==========================================
-   4. İÇERİK ALANI VE FLEXBOX (Madde 14)
-   ========================================== */
 .icerik-alani {
     display: flex;
     flex-direction: column;
@@ -85,8 +70,6 @@ body {
     line-height: 1.8;
     margin-bottom: 30px;
 }
-
-/* Kartların Yan Yana Durması İçin Flexbox Düzeni */
 .kart-alani {
     display: flex;
     gap: 50px;
@@ -113,7 +96,7 @@ body {
 }
 
 .yonlendirme-karti:hover {
-    transform: translateY(-5px); /* Doğal ve abartısız öğrenci işi hover hareketi */
+    transform: translateY(-5px); 
 }
 
 .kart-ikon {
@@ -127,10 +110,6 @@ body {
     font-weight: bold;
     color: white;
 }
-
-/* ==========================================
-   5. FOOTER ALANI (Madde 4)
-   ========================================== */
 .alt-footer {
     background-color: #6d597a;
     color: white;
@@ -138,9 +117,7 @@ body {
     padding: 15px;
     margin-top: 40px;
     font-size: 14px;
-}/* ==========================================
-   6. TARİFLER VE GALERİ SAYFASI AYARLARI
-   ========================================== */
+}
 .tarif-bilgi-metni {
     font-size: 15px;
     color: #5e503f;
@@ -162,15 +139,13 @@ body {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
-    border: 1px solid #ffb6c1; /* Temaya uygun soft pembe çerçeve */
+    border: 1px solid #ffb6c1; 
     transition: 0.3s;
 }
 
 .galeri-karti:hover {
-    transform: scale(1.02); /* Hafif büyüme efekti */
+    transform: scale(1.02); 
 }
-
-/* HTML içindeki width="300" yerine CSS ile boyutlandırma (Madde 10 Güvenliği) */
 .galeri-resim {
     width: 300px;
     height: auto;
@@ -184,9 +159,7 @@ body {
     font-weight: bold;
     color: #6d597a;
     font-size: 14px;
-}/* ==========================================
-   7. İLETİŞİM SAYFASI VE FORM AYARLARI
-   ========================================== */
+}
 .form-konteyner {
     max-width: 600px;
     margin: 40px auto;
@@ -218,7 +191,7 @@ body {
 }
 
 .form-grup input:focus, .form-grup textarea:focus {
-    border-color: #6d597a; /* Odaklanınca mor tonu */
+    border-color: #6d597a; 
 }
 
 .gonder-buton {
@@ -238,8 +211,6 @@ body {
     background-color: #ffb6c1;
     color: #4a3f4b;
 }
-
-/* HTML'den temizlediğimiz satır içi stillerin CSS karşılıkları */
 .form-ayrac {
     border: 0;
     border-top: 1px solid #b5838d;
@@ -264,9 +235,7 @@ body {
 
 .github-metin {
     margin-top: 10px;
-}/* ==========================================
-   8. TARİF DETAY SAYFALARI AYARLARI
-   ========================================== */
+}
 .tarif-detay-konteyner {
     max-width: 700px;
     margin: 40px auto;
@@ -274,7 +243,7 @@ body {
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
-    text-align: left; /* Tarif adımlarının rahat okunması için sola yasladık */
+    text-align: left; 
 }
 
 .tarif-detay-konteyner h1 {
@@ -307,8 +276,6 @@ body {
     color: #5e503f;
     margin-bottom: 15px;
 }
-
-/* HTML içindeki satır içi stili buraya taşıdık */
 .geri-don-link {
     color: #e56b6f;
     text-decoration: none;
@@ -320,9 +287,7 @@ body {
 .geri-don-link:hover {
     color: #6d597a;
     text-decoration: underline;
-}/* ==========================================
-   9. LAZANYA VE DİĞER RESİMLİ TARİFLERİN EK CSS AYARLARI
-   ========================================== */
+}
 .tarif-resim-alani {
     text-align: center;
     margin-bottom: 30px;
@@ -352,12 +317,10 @@ body {
 
 .tarif-sirali-liste li {
     margin-bottom: 10px;
-}/* ==========================================
-   10. TARİF KATALOĞU VE GALERİ ALANI (Madde 6, 14)
-   ========================================== */
+}
 .tarif-galeri-alani {
     display: flex;
-    flex-wrap: wrap; /* Kartlar sığmayınca alt satıra geçsin (Mobil uyum için) */
+    flex-wrap: wrap; 
     gap: 30px;
     justify-content: center;
     max-width: 1200px;
@@ -374,14 +337,14 @@ body {
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Butonların hep aynı hizada durması için */
-    border: 1px solid #ffb6c1; /* Temaya uygun soft pembe çerçeve */
+    justify-content: space-between; 
+    border: 1px solid #ffb6c1; 
 }
 
 .tarif-katalog-kart img {
     width: 100%;
     height: 150px;
-    object-fit: cover; /* Resimlerin kutuyu düzgün doldurması için */
+    object-fit: cover; 
     border-radius: 6px;
     margin-bottom: 15px;
 }
@@ -397,7 +360,7 @@ body {
     color: #5e503f;
     line-height: 1.5;
     margin-bottom: 15px;
-    flex-grow: 1; /* Açıklama metni kısa olsa bile butonu aşağı iter */
+    flex-grow: 1; 
 }
 
 .incele-buton {
@@ -415,9 +378,7 @@ body {
 .incele-buton:hover {
     background-color: #ffb6c1;
     color: #4a3f4b;
-}/* ==========================================
-   11. MAĞAZA ÜRÜN LİSTELEME AYARLARI (Madde 6, 14)
-   ========================================== */
+}
 .magaza-galeri-alani {
     display: flex;
     flex-wrap: wrap;
@@ -438,7 +399,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid #b5838d; /* Temaya uygun soft gül kurusu tonu */
+    border: 1px solid #b5838d; 
 }
 
 .magaza-urun-kart img {
@@ -479,9 +440,7 @@ body {
 .sepete-ekle-btn:hover {
     background-color: #ffb6c1;
     color: #4a3f4b;
-}/* ==========================================
-   12. SEPETİM SAYFASI TASARIM AYARLARI (Madde 6, 14)
-   ========================================== */
+}
 .sepet-sayfa-konteyner {
     max-width: 800px;
     margin: 40px auto;
@@ -531,8 +490,6 @@ body {
     color: #888;
     font-size: 14px;
 }
-
-/* Adet Seçim Alanı Stilleri */
 .sepet-adet-alani {
     display: flex;
     align-items: center;
@@ -601,42 +558,32 @@ body {
 
 .sepet-temizle-buton:hover {
     background-color: #6d597a;
-}/* ==========================================
-   13. BİLGİSAYAR EKRANLARI İÇİN FOTOĞRAF BOYUTU SINIRLANDIRMALARI
-   ========================================== */
-
-/* Tarif Listesindeki (Katalog) Resimler İçin */
+}
 .tarif-katalog-kart img {
     width: 100%;
-    height: 200px;       /* Masaüstünde fotoğrafların yüksekliğini sabitledik */
-    object-fit: cover;   /* Fotoğrafın sünmesini/bozulmasını engeller, kutuyu doldurur */
+    height: 200px;      
+    object-fit: cover;   
     border-radius: 6px;
     margin-bottom: 15px;
 }
-
-/* Ürünler (Mağaza) Sayfasındaki Resimler İçin */
 .magaza-urun-kart img {
     width: 100%;
-    height: 180px;       /* Ürün görsellerini bilgisayarda ideal boyuta çektik */
+    height: 180px;    
     object-fit: cover;
     border-radius: 6px;
     margin-bottom: 15px;
 }
-
-/* Tekil Tarif Detay Sayfalarındaki (Lazanya, Pizza vb.) Büyük Resimler İçin */
 .tarif-ana-resim {
     width: 100%;
-    max-width: 500px;    /* Bilgisayarda devasa olmasını engelleyip maksimum 500px yaptık */
-    height: 350px;       /* Sabit bir yükseklik verdik */
+    max-width: 500px;   
+    height: 350px;       
     object-fit: cover;
     border-radius: 8px;
     display: inline-block;
 }
-
-/* Yemek Galerisi (galeri.html) Sayfasındaki Resim İçin */
 .galeri-resim {
     width: 100%;
-    max-width: 400px;    /* Bilgisayarda tarçınlı rulo resminin taşmasını engeller */
+    max-width: 400px;    
     height: 300px;
     object-fit: cover;
     border-radius: 4px;
