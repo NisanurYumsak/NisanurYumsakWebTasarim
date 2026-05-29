@@ -15,7 +15,7 @@
         <div class="linkler">
             <a href="../index.html">Ana Sayfa</a>
             <a href="urunler.html">Ürünler</a>
-            <a href="sepet.html">Sepetim</a>
+            <a href="sepet.html" class="aktif">Sepetim</a>
             <a href="tarifler.html">Tarifler</a>
             <a href="iletisim.html">İletişim</a>
         </div>
@@ -23,94 +23,27 @@
 
     <div class="banner">
         <h1>Alışveriş Sepetim</h1>
-        <p>Seçtiğiniz malzemeler burada.</p>
+        <p>Seçtiğiniz malzemeler burada listelenir, miktarlarını ayarlayabilirsiniz.</p>
     </div>
 
-    <div style="max-width: 800px; margin: 40px auto; background-color: white; padding: 30px; border-radius: 8px; box-shadow: 0px 4px 10px rgba(0,0,0,0.05); margin-bottom: 100px;">
+    <div class="sepet-sayfa-konteyner">
         
-        <div id="sepet-listesi">
-            </div>
+        <div id="sepet-listesi"></div>
 
-        <hr style="border: 0; height: 1px; background: #ddd; margin: 20px 0;">
+        <hr class="sepet-ayrac">
 
-        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 20px; font-weight: bold; color: #6d597a;">
+        <div class="sepet-toplam-alani">
             <span>Genel Toplam:</span>
-            <span id="sepet-toplam">0 TL</span>
+            <span id="toplam-fiyat-yazi">0 TL</span>
         </div>
 
-        <button onclick="sepetiTemizle()" style="margin-top: 20px; background-color: #e56b6f; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">Sepeti Temizle</button>
+        <button id="sepeti-temizle-btn" class="sepet-temizle-buton">Sepeti Temizle</button>
     </div>
 
     <div class="alt-footer">
         <p>Web Tasarımı ve İnternet Programlama Dersi Ödevi &copy; 2026</p>
     </div>
 
-    <script>
-        function sepetiListele() {
-            const sepetListesiKutusu = document.getElementById('sepet-listesi');
-            const toplamKutusu = document.getElementById('sepet-toplam');
-            
-            let sepet = JSON.parse(localStorage.getItem('sepet')) || [];
-            
-            if (sepet.length === 0) {
-                sepetListesiKutusu.innerHTML = '<p style="text-align:center; color:#888; font-size:18px;">Sepetiniz şu an boş. Lezzetli malzemeler eklemeye ne dersiniz? 🛒</p>';
-                toplamKutusu.innerText = '0 TL';
-                return;
-            }
-
-            let htmlIcerik = '';
-            let genelToplam = 0;
-
-            sepet.forEach((urun, index) => {
-                const urunToplam = urun.fiyat * urun.adet;
-                genelToplam += urunToplam;
-
-                htmlIcerik += `
-                    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee;">
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <img src="${urun.resim}" style="width: 60px; height: 60px; object-fit: cover; border-radius: 4px;">
-                            <div>
-                                <h4 style="margin: 0; color: #6d597a;">${urun.ad}</h4>
-                                <p style="margin: 5px 0 0 0; color: #888;">Birim Fiyat: ${urun.fiyat} TL</p>
-                            </div>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 20px;">
-                            <div style="display: flex; align-items: center; gap: 10px; background-color: #f4f1de; padding: 5px 10px; border-radius: 20px;">
-                                <button onclick="adetDegistir('${urun.id}', -1)" style="background: none; border: none; font-size: 18px; font-weight: bold; color: #e56b6f; cursor: pointer; padding: 0 5px;">-</button>
-                                <span style="font-weight: bold; color: #5e503f; min-width: 20px; text-align: center;">${urun.adet}</span>
-                                <button onclick="adetDegistir('${urun.id}', 1)" style="background: none; border: none; font-size: 18px; font-weight: bold; color: #2a9d8f; cursor: pointer; padding: 0 5px;">+</button>
-                            </div>
-                            <div style="font-weight: bold; color: #6d597a; min-width: 80px; text-align: right;">${urunToplam} TL</div>
-                        </div>
-                    </div>
-                `;
-            });
-
-            sepetListesiKutusu.innerHTML = htmlIcerik;
-            toplamKutusu.innerText = genelToplam + ' TL';
-        }
-
-        function adetDegistir(urunId, miktar) {
-            let sepet = JSON.parse(localStorage.getItem('sepet')) || [];
-            const urun = sepet.find(item => item.id === urunId);
-
-            if (urun) {
-                urun.adet += miktar;
-
-                if (urun.adet <= 0) {
-                    sepet = sepet.filter(item => item.id !== urunId);
-                }
-                localStorage.setItem('sepet', JSON.stringify(sepet));
-                sepetiListele();
-            }
-        }
-
-        function sepetiTemizle() {
-            if(confirm("Sepetinizdeki tüm ürünleri silmek istediğinize emin misiniz?")) {
-                localStorage.removeItem('sepet');
-                sepetiListele();
-            }
-        }
-
-        window.onload = sepetiListele;
-    </script>
+    <script src="../scripts/myscript.js"></script>
+</body>
+</html>

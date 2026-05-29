@@ -1,276 +1,604 @@
-/*Temel sayfa ayarları*/
+/* ==========================================
+   1. GENEL SAYFA AYARLARI
+   ========================================== */
 body {
-    background-color: #faf5f0;
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    background-color: #f7f5f0; /* Yumuşak krem/beyaz tonu */
 }
 
-/* Üst Menü / Navbar */
+/* ==========================================
+   2. HEADER VE NAVBAR (Madde 4 & 5)
+   ========================================== */
 .header-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #cdb4db; /* Pastel tonu */
-    padding: 15px;
-    border-bottom: 2px solid #b5838d;
+    background-color: #6d597a; /* Soft mor/pembe tonu */
+    padding: 15px 30px;
+    color: white;
 }
 
 .site-baslik h2 {
     margin: 0;
-    color: #5e503f;
+    font-size: 22px;
 }
 
 .linkler a {
-    color: #5e503f;
-    text-decoration: none;
-    margin-left: 15px;
-    font-weight: bold;
-}
-
-.linkler a:hover {
-    color: #e56b6f; 
-}
-
-/* Giriş */
-.banner {
-    background-color: #ffcdb2;
-    text-align: center;
-    padding: 40px 10px;
-    margin-bottom: 20px;
-}
-
-.banner h1 {
-    color: #6d597a;
-    margin-bottom: 10px;
-}
-
-/* İçerik Alanı */
-.icerik-alani {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    flex-wrap: wrap; 
-}
-
-/* Ürün ve Tarif Kartları */
-.urun-kart {
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    border-radius: 5px;
-    width: 300px;
-    padding: 15px;
-    text-align: center;
-}
-
-.urun-kart img {
-    width: 100%;
-    height: 200px;
-    border-radius: 3px;
-    object-fit: cover;
-}
-
-.urun-kart h3 {
-    color: #6d597a;
-    margin: 10px 0;
-}
-
-.urun-kart p {
-    font-size: 14px;
-    color: #555555;
-}
-
-.urun-kart .fiyat {
-    font-weight: bold;
-    color: #e56b6f;
-    font-size: 18px;
-}
-
-.urun-kart .incele-buton {
-    display: inline-block;
-    background-color: #6d597a;
     color: white;
-    padding: 8px 15px;
     text-decoration: none;
-    border-radius: 4px;
-    margin-top: 10px;
-}
-
-.urun-kart .incele-buton:hover {
-    background-color: #b5838d;
-}
-
-/* Tarif Detay Sayfası Tasarımı */
-.tarif-detay-konteyner {
-    max-width: 800px;
-    margin: 30px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    border-radius: 5px;
-}
-
-.tarif-detay-konteyner h1 {
-    color: #6d597a;
-    margin-bottom: 10px;
-}
-
-.tarif-detay-konteyner hr {
-    border: 0;
-    border-top: 1px solid #b5838d;
-    margin: 15px 0;
-}
-
-.tarif-detay-konteyner h3 {
-    color: #5e503f;
-    margin-top: 20px;
-}
-
-.tarif-detay-konteyner ul {
-    margin-bottom: 20px;
-    padding-left: 20px;
-}
-
-.tarif-detay-konteyner p {
-    margin-bottom: 12px;
+    margin-left: 20px;
+    font-weight: bold;
     font-size: 15px;
 }
 
-/* İletişim Alanı */
-.iletisim-linki {
+/* Üzerine gelince veya aktif sayfadayken soft pembe olsun */
+.linkler a:hover, .linkler a.aktif {
+    color: #ffb6c1; 
+}
+
+/* ==========================================
+   3. BANNER ALANI
+   ========================================== */
+.banner {
+    background-color: #ffb6c1; /* Soft pembe arka plan */
+    color: #4a3f4b;
     text-align: center;
-    margin: 20px 0;
+    padding: 80px 20px;
 }
 
-.iletisim-linki a {
-    color: #e56b6f;
+.banner h1 {
+    margin: 0 0 10px 0;
+    font-size: 32px;
+}
+
+.banner p {
+    margin: 0;
+    font-size: 18px;
+}
+
+/* ==========================================
+   4. İÇERİK ALANI VE FLEXBOX (Madde 14)
+   ========================================== */
+.icerik-alani {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+}
+
+.icerik-baslik {
+    color: #6d597a;
+    margin-bottom: 20px;
+}
+
+.icerik-metni {
+    font-size: 16px;
+    color: #5e503f;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* Kartların Yan Yana Durması İçin Flexbox Düzeni */
+.kart-alani {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.yonlendirme-karti {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-decoration: none;
+    background-color: #6d597a;
+    width: 180px;
+    min-height: 180px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.yonlendirme-karti:hover {
+    transform: translateY(-5px); /* Doğal ve abartısız öğrenci işi hover hareketi */
+}
+
+.kart-ikon {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.kart-yazi {
+    font-size: 16px;
     font-weight: bold;
+    color: white;
 }
 
-/* Footer Kısmı */
+/* ==========================================
+   5. FOOTER ALANI (Madde 4)
+   ========================================== */
 .alt-footer {
-    background-color: #cdb4db;
+    background-color: #6d597a;
+    color: white;
     text-align: center;
     padding: 15px;
-    margin-top: 30px;
-    border-top: 2px solid #b5838d;
+    margin-top: 40px;
+    font-size: 14px;
+}/* ==========================================
+   6. TARİFLER VE GALERİ SAYFASI AYARLARI
+   ========================================== */
+.tarif-bilgi-metni {
+    font-size: 15px;
     color: #5e503f;
-}/* İletişim Formu Tasarımı */
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.galeri-alani {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.galeri-karti {
+    display: block;
+    text-decoration: none;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid #ffb6c1; /* Temaya uygun soft pembe çerçeve */
+    transition: 0.3s;
+}
+
+.galeri-karti:hover {
+    transform: scale(1.02); /* Hafif büyüme efekti */
+}
+
+/* HTML içindeki width="300" yerine CSS ile boyutlandırma (Madde 10 Güvenliği) */
+.galeri-resim {
+    width: 300px;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+}
+
+.galeri-alt-yazi {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #6d597a;
+    font-size: 14px;
+}/* ==========================================
+   7. İLETİŞİM SAYFASI VE FORM AYARLARI
+   ========================================== */
 .form-konteyner {
     max-width: 600px;
-    margin: 30px auto;
-    padding: 25px;
+    margin: 40px auto;
     background-color: #ffffff;
-    border: 1px solid #dddddd;
-    border-radius: 5px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
 }
 
 .form-grup {
-    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
+    margin-bottom: 20px;
     text-align: left;
 }
 
 .form-grup label {
     font-weight: bold;
-    margin-bottom: 5px;
-    color: #5e503f;
-    font-size: 14px;
+    margin-bottom: 8px;
+    color: #6d597a;
 }
 
-.form-grup input, 
-.form-grup textarea {
+.form-grup input, .form-grup textarea {
     padding: 10px;
-    border: 1px solid #cccccc;
+    border: 1px solid #b5838d;
     border-radius: 4px;
     font-size: 14px;
+    outline: none;
+}
+
+.form-grup input:focus, .form-grup textarea:focus {
+    border-color: #6d597a; /* Odaklanınca mor tonu */
 }
 
 .gonder-buton {
     background-color: #6d597a;
     color: white;
-    padding: 12px 20px;
     border: none;
-    border-radius: 4px;
-    cursor: pointer;
+    padding: 12px 20px;
     font-size: 16px;
     font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
     width: 100%;
+    transition: 0.3s;
 }
 
 .gonder-buton:hover {
-    background-color: #b5838d;
-}/* Sepet Sayfası Tasarımı */
-.sepet-konteyner {
-    max-width: 600px;
-    margin: 30px auto;
-    padding: 25px;
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
-    border-radius: 5px;
+    background-color: #ffb6c1;
+    color: #4a3f4b;
 }
 
-.sepet-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px dashed #cccccc;
+/* HTML'den temizlediğimiz satır içi stillerin CSS karşılıkları */
+.form-ayrac {
+    border: 0;
+    border-top: 1px solid #b5838d;
+    margin: 20px 0;
 }
 
-.urun-adi {
-    font-weight: bold;
+.eski-bilgiler {
+    text-align: center;
+    font-size: 14px;
     color: #5e503f;
 }
 
-.adet-kontrol {
+.iletisim-link {
+    color: #e56b6f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.iletisim-link:hover {
+    text-decoration: underline;
+}
+
+.github-metin {
+    margin-top: 10px;
+}/* ==========================================
+   8. TARİF DETAY SAYFALARI AYARLARI
+   ========================================== */
+.tarif-detay-konteyner {
+    max-width: 700px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+    text-align: left; /* Tarif adımlarının rahat okunması için sola yasladık */
+}
+
+.tarif-detay-konteyner h1 {
+    color: #6d597a;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.tarif-detay-konteyner h3 {
+    color: #b5838d;
+    margin-top: 25px;
+    border-bottom: 2px solid #f7f5f0;
+    padding-bottom: 5px;
+}
+
+.tarif-cizgi {
+    border: 0;
+    border-top: 1px solid #ffb6c1;
+    margin: 20px 0;
+}
+
+.tarif-liste {
+    line-height: 1.8;
+    color: #5e503f;
+    padding-left: 20px;
+}
+
+.tarif-adimlar p {
+    line-height: 1.8;
+    color: #5e503f;
+    margin-bottom: 15px;
+}
+
+/* HTML içindeki satır içi stili buraya taşıdık */
+.geri-don-link {
+    color: #e56b6f;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.geri-don-link:hover {
+    color: #6d597a;
+    text-decoration: underline;
+}/* ==========================================
+   9. LAZANYA VE DİĞER RESİMLİ TARİFLERİN EK CSS AYARLARI
+   ========================================== */
+.tarif-resim-alani {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tarif-ana-resim {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-height: 400px;
+    object-fit: cover;
+    display: inline-block;
+}
+
+.tarif-alt-baslik {
+    color: #6d597a;
+    border-bottom: 2px solid #6d597a;
+    padding-bottom: 5px;
+    margin-top: 25px;
+}
+
+.tarif-sirali-liste {
+    line-height: 1.8;
+    color: #5e503f;
+    padding-left: 20px;
+}
+
+.tarif-sirali-liste li {
+    margin-bottom: 10px;
+}/* ==========================================
+   10. TARİF KATALOĞU VE GALERİ ALANI (Madde 6, 14)
+   ========================================== */
+.tarif-galeri-alani {
+    display: flex;
+    flex-wrap: wrap; /* Kartlar sığmayınca alt satıra geçsin (Mobil uyum için) */
+    gap: 30px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.tarif-katalog-kart {
+    background-color: #ffffff;
+    width: 250px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Butonların hep aynı hizada durması için */
+    border: 1px solid #ffb6c1; /* Temaya uygun soft pembe çerçeve */
+}
+
+.tarif-katalog-kart img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* Resimlerin kutuyu düzgün doldurması için */
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.tarif-katalog-kart h3 {
+    color: #6d597a;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.tarif-katalog-kart p {
+    font-size: 14px;
+    color: #5e503f;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Açıklama metni kısa olsa bile butonu aşağı iter */
+}
+
+.incele-buton {
+    display: block;
+    background-color: #6d597a;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.incele-buton:hover {
+    background-color: #ffb6c1;
+    color: #4a3f4b;
+}/* ==========================================
+   11. MAĞAZA ÜRÜN LİSTELEME AYARLARI (Madde 6, 14)
+   ========================================== */
+.magaza-galeri-alani {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.magaza-urun-kart {
+    background-color: #ffffff;
+    width: 240px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #b5838d; /* Temaya uygun soft gül kurusu tonu */
+}
+
+.magaza-urun-kart img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.magaza-urun-kart h3 {
+    color: #6d597a;
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.magaza-urun-kart .fiyat {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e56b6f;
+    margin: 10px 0;
+}
+
+.sepete-ekle-btn {
+    display: block;
+    background-color: #6d597a;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.sepete-ekle-btn:hover {
+    background-color: #ffb6c1;
+    color: #4a3f4b;
+}/* ==========================================
+   12. SEPETİM SAYFASI TASARIM AYARLARI (Madde 6, 14)
+   ========================================== */
+.sepet-sayfa-konteyner {
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 100px;
+}
+
+.sepet-bos-mesaj {
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+    padding: 20px 0;
+}
+
+.sepet-urun-satiri {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
 }
 
-.adet-kontrol button {
-    background-color: #6d597a;
+.sepet-urun-resim {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.sepet-urun-bilgi {
+    flex-grow: 1;
+    margin-left: 15px;
+    text-align: left;
+}
+
+.sepet-urun-bilgi h4 {
+    margin: 0;
+    color: #6d597a;
+}
+
+.sepet-urun-bilgi p {
+    margin: 5px 0 0 0;
+    color: #888;
+    font-size: 14px;
+}
+
+/* Adet Seçim Alanı Stilleri */
+.sepet-adet-alani {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #f7f5f0;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+.sepet-adet-alani button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 5px;
+    color: #6d597a;
+}
+
+.sepet-adet-alani button:hover {
+    color: #e56b6f;
+}
+
+.sepet-adet-alani span {
+    font-weight: bold;
+    color: #5e503f;
+    min-width: 20px;
+    text-align: center;
+}
+
+.sepet-urun-toplam {
+    font-weight: bold;
+    color: #6d597a;
+    min-width: 90px;
+    text-align: right;
+}
+
+.sepet-ayrac {
+    border: 0;
+    height: 1px;
+    background: #b5838d;
+    margin: 20px 0;
+}
+
+.sepet-toplam-alani {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #6d597a;
+}
+
+.sepet-temizle-buton {
+    margin-top: 20px;
+    background-color: #e56b6f;
     color: white;
     border: none;
-    padding: 5px 12px;
-    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 3px;
-}
-
-.adet-kontrol button:hover {
-    background-color: #b5838d;
-}
-
-.adet-kontrol span {
     font-weight: bold;
-    font-size: 16px;
-    width: 20px;
-    text-align: center;
+    transition: 0.3s;
+    width: 100%;
 }
 
-.toplam-alani {
-    text-align: right;
-    color: #e56b6f;
-    font-size: 18px;
-}
-.tarif-detay-konteyner {
-    max-width: 800px;
-    margin: 40px auto; 
-    margin-bottom: 100px; 
-    padding: 30px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.05); 
-}
-.alt-footer {
-    text-align: center;
-    padding: 20px;
+.sepet-temizle-buton:hover {
     background-color: #6d597a;
-    color: white;
-    margin-top: auto;
-    width: 100%;
 }
