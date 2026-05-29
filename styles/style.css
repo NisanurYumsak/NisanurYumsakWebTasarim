@@ -601,4 +601,44 @@ body {
 
 .sepet-temizle-buton:hover {
     background-color: #6d597a;
+}/* ==========================================
+   13. BİLGİSAYAR EKRANLARI İÇİN FOTOĞRAF BOYUTU SINIRLANDIRMALARI
+   ========================================== */
+
+/* Tarif Listesindeki (Katalog) Resimler İçin */
+.tarif-katalog-kart img {
+    width: 100%;
+    height: 200px;       /* Masaüstünde fotoğrafların yüksekliğini sabitledik */
+    object-fit: cover;   /* Fotoğrafın sünmesini/bozulmasını engeller, kutuyu doldurur */
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+/* Ürünler (Mağaza) Sayfasındaki Resimler İçin */
+.magaza-urun-kart img {
+    width: 100%;
+    height: 180px;       /* Ürün görsellerini bilgisayarda ideal boyuta çektik */
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+/* Tekil Tarif Detay Sayfalarındaki (Lazanya, Pizza vb.) Büyük Resimler İçin */
+.tarif-ana-resim {
+    width: 100%;
+    max-width: 500px;    /* Bilgisayarda devasa olmasını engelleyip maksimum 500px yaptık */
+    height: 350px;       /* Sabit bir yükseklik verdik */
+    object-fit: cover;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* Yemek Galerisi (galeri.html) Sayfasındaki Resim İçin */
+.galeri-resim {
+    width: 100%;
+    max-width: 400px;    /* Bilgisayarda tarçınlı rulo resminin taşmasını engeller */
+    height: 300px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
 }
