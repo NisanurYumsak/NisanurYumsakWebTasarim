@@ -56,23 +56,54 @@
             <a href="lazanya.html" class="incele-buton">Tarifi İncele</a>
         </div>
         
-        <div class="quiz-konteyner">
+    </div> 
+
+    <div class="quiz-konteyner">
         <h3>🧁 Nisa'nın Lezzet Oyunu: Malzemeleri Yaz, İndirimi Kap!</h3>
-        <p id="quiz-soru">"Ev Yapımı Karışık Pizza" tarifinde kullanılan malzemelerden 3 tanesini aşağıdaki kutuya yazabilir misiniz?</p>
+        <p id="quiz-soru">"Ev Yapımı Karışık Pizza" tarifimde kullandığım malzemelerden en az 3 tanesini aşağıdaki kutuya aralarında virgül bırakarak yazabilir misiniz?</p>
         
         <div class="quiz-klasik-alan">
-            <input type="text" id="klasik-cevap-input" placeholder="Cevabı buraya giriniz.">
+            <input type="text" id="klasik-cevap-input" placeholder="Örn: sucuk, mısır, kaşar...">
             <button onclick="klasikOyunKontrol()">Cevabı Kontrol Et</button>
         </div>
         
         <p id="quiz-sonuc"></p>
     </div>
 
-    </div> 
-
+    
     <div class="alt-footer">
         <p>Web Tasarımı ve İnternet Programlama Dersi Ödevi &copy; 2026</p>
     </div>
 
+    
+    <script>
+        function klasikOyunKontrol() {
+            const inputKutusu = document.getElementById('klasik-cevap-input');
+            const sonucYazisi = document.getElementById('quiz-sonuc');
+            
+            if (!inputKutusu || !sonucYazisi) return;
+
+            const kullaniciCevabi = inputKutusu.value.toLowerCase();
+            const gecerliMalzemeler = ['sucuk', 'sosis', 'mısır', 'kaşar', 'mantar', 'zeytin', 'un', 'maya', 'kekik'];
+            let bilinenMalzemeSayisi = 0;
+
+            gecerliMalzemeler.forEach(malzeme => {
+                if (kullaniciCevabi.includes(malzeme)) {
+                    bilinenMalzemeSayisi++;
+                }
+            });
+
+            if (bilinenMalzemeSayisi >= 3) {
+                sonucYazisi.innerText = "🎉 Harika! Tarifteki malzemeleri başarıyla bildiniz. 20 TL İndirim Kodunuz: LEZZET20";
+                sonucYazisi.style.color = "#2a9d8f";
+            } else {
+                sonucYazisi.innerText = "❌ En az 3 malzeme bilmeniz gerekiyor. Lütfen tarifi tekrar inceleyip aralarına virgül koyarak yazın!";
+                sonucYazisi.style.color = "#e56b6f";
+            }
+        }
+    </script>
+
+    
+    <script src="../scripts/myscript.js"></script>
 </body>
 </html>

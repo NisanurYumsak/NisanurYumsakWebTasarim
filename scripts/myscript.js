@@ -1,4 +1,3 @@
-
 const ekleButonlari = document.querySelectorAll('.sepete-ekle-btn');
 
 if (ekleButonlari.length > 0) {
@@ -20,10 +19,11 @@ if (ekleButonlari.length > 0) {
                 sepet.push(urun); 
             }
             localStorage.setItem('sepet', JSON.stringify(sepet));
-            alert(`${urun.ad} sepetinize eklendi!`);
+            alert(`${urun.ad} sepetinize eklendi! 🛒`);
         });
     });
 }
+
 
 const sepetKonteyner = document.getElementById('sepet-listesi');
 const toplamFiyatYazi = document.getElementById('toplam-fiyat-yazi');
@@ -36,7 +36,7 @@ function sepetiListele() {
     let toplamTutar = 0;
 
     if (sepet.length === 0) {
-        sepetKonteyner.innerHTML = "<p class='sepet-bos-mesaj'>Sepetiniz şu anda boş.</p>";
+        sepetKonteyner.innerHTML = "<p class='sepet-bos-mesaj'>Sepetiniz şu anda boş. Lezzetli malzemeler eklemeye ne dersiniz? 🛒</p>";
         if (toplamFiyatYazi) toplamFiyatYazi.innerText = "0 TL";
         return;
     }
@@ -67,6 +67,7 @@ function sepetiListele() {
         toplamFiyatYazi.innerText = toplamTutar + " TL";
     }
 }
+
 function adetDegistir(urunId, deger) {
     let sepet = JSON.parse(localStorage.getItem('sepet')) || [];
     const urun = sepet.find(item => item.id === urunId);
@@ -82,6 +83,7 @@ function adetDegistir(urunId, deger) {
 }
 
 document.addEventListener('DOMContentLoaded', sepetiListele);
+
 const temizleBtn = document.getElementById('sepeti-temizle-btn');
 if (temizleBtn) {
     temizleBtn.addEventListener('click', function() {
@@ -90,50 +92,4 @@ if (temizleBtn) {
             sepetiListele(); 
         }
     });
-}
-function odemeYap() {
-    let sepet = JSON.parse(localStorage.getItem('sepet')) || [];
-    
-    if (sepet.length === 0) {
-        alert("Sepetiniz boşken ödeme adımına geçemezsiniz! 🛒");
-        return;
-    }
-    
-    alert("Ödeme işlemi şu anda gerçekleştirilemiyor.");
-}
-
-function klasikOyunKontrol() {
-    
-    const inputKutusu = document.getElementById('klasik-cevap-input');
-    const sonucYazisi = document.getElementById('quiz-sonuc');
-    
-    
-    if (!inputKutusu || !sonucYazisi) {
-        console.error("Hata: HTML elementleri bulunamadı!");
-        return;
-    }
-
-    
-    const kullaniciCevabi = inputKutusu.value.toLowerCase();
-    
-    
-    const gecerliMalzemeler = ['sucuk', 'sosis', 'mısır', 'kaşar', 'mantar', 'zeytin', 'un', 'maya', 'kekik'];
-    
-    let bilinenMalzemeSayisi = 0;
-
-    
-    gecerliMalzemeler.forEach(malzeme => {
-        if (kullaniciCevabi.includes(malzeme)) {
-            bilinenMalzemeSayisi++;
-        }
-    });
-
-    
-    if (bilinenMalzemeSayisi >= 3) {
-        sonucYazisi.innerText = "🎉 Harika! Tarifteki malzemeleri başarıyla bildiniz. 20 TL İndirim Kodunuz: LEZZET20";
-        sonucYazisi.style.color = "#2a9d8f";
-    } else {
-        sonucYazisi.innerText = `❌ En az 3 malzeme bilmeniz gerekiyor. Şu an ${bilinenMalzemeSayisi} malzeme eşleşti. Lütfen tarifi tekrar inceleyip virgüllerle yazın!`;
-        sonucYazisi.style.color = "#e56b6f";
-    }
 }
