@@ -91,3 +91,13 @@ if (temizleBtn) {
         }
     });
 }
+function odemeYap() {
+    let sepet = JSON.parse(localStorage.getItem('sepet')) || [];
+    
+    if (sepet.length === 0) {
+        alert("Sepetiniz boşken ödeme adımına geçemezsiniz! 🛒");
+        return;
+    }
+    
+    alert("Sistem Bilgisi: Ödeme işlemi şu anda gerçekleştirilemiyor. Güvenliğiniz için bu aşama simüle edilmiştir.");
+}
