@@ -101,3 +101,26 @@ function odemeYap() {
     
     alert("Ödeme işlemi şu anda gerçekleştirilemiyor.");
 }
+
+function klasikOyunKontrol() {
+    const kullaniciCevabi = document.getElementById('klasik-cevap-input').value.toLowerCase();
+    const sonucYazisi = document.getElementById('quiz-sonuc');
+    
+    const gecerliMalzemeler = ['sucuk', 'sosis', 'mısır', 'kaşar', 'mantar', 'zeytin', 'un', 'maya', 'kekik'];
+    
+    let bilinenMalzemeSayisi = 0;
+
+    gecerliMalzemeler.forEach(malzeme => {
+        if (kullaniciCevabi.includes(malzeme)) {
+            bilinenMalzemeSayisi++;
+        }
+    });
+
+    if (bilinenMalzemeSayisi >= 3) {
+        sonucYazisi.innerText = "🎉 Harika! Tarifteki malzemeleri başarıyla bildiniz. 20 TL İndirim Kodunuz: LEZZET20";
+        sonucYazisi.style.color = "#2a9d8f";
+    } else {
+        sonucYazisi.innerText = `❌ En az 3 malzeme bilmeniz gerekiyor. Şu an ${bilinenMalzemeSayisi} malzeme eşleşti. Lütfen tarifi tekrar inceleyip virgüllerle yazın!`;
+        sonucYazisi.style.color = "#e56b6f";
+    }
+}

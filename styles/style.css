@@ -589,3 +589,40 @@ body {
     border-radius: 4px;
     display: block;
 }
+.quiz-klasik-alan {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.quiz-klasik-alan input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #b5838d;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+}
+
+.quiz-klasik-alan input:focus {
+    border-color: #6d597a;
+}
+
+.quiz-klasik-alan button {
+    background-color: #6d597a;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.quiz-klasik-alan button:hover {
+    background-color: #ffb6c1;
+    color: #4a3f4b;
+}
