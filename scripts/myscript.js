@@ -103,19 +103,32 @@ function odemeYap() {
 }
 
 function klasikOyunKontrol() {
-    const kullaniciCevabi = document.getElementById('klasik-cevap-input').value.toLowerCase();
+    
+    const inputKutusu = document.getElementById('klasik-cevap-input');
     const sonucYazisi = document.getElementById('quiz-sonuc');
+    
+    
+    if (!inputKutusu || !sonucYazisi) {
+        console.error("Hata: HTML elementleri bulunamadı!");
+        return;
+    }
+
+    
+    const kullaniciCevabi = inputKutusu.value.toLowerCase();
+    
     
     const gecerliMalzemeler = ['sucuk', 'sosis', 'mısır', 'kaşar', 'mantar', 'zeytin', 'un', 'maya', 'kekik'];
     
     let bilinenMalzemeSayisi = 0;
 
+    
     gecerliMalzemeler.forEach(malzeme => {
         if (kullaniciCevabi.includes(malzeme)) {
             bilinenMalzemeSayisi++;
         }
     });
 
+    
     if (bilinenMalzemeSayisi >= 3) {
         sonucYazisi.innerText = "🎉 Harika! Tarifteki malzemeleri başarıyla bildiniz. 20 TL İndirim Kodunuz: LEZZET20";
         sonucYazisi.style.color = "#2a9d8f";
