@@ -99,5 +99,5 @@ function odemeYap() {
         return;
     }
     
-    alert("Sistem Bilgisi: Ödeme işlemi şu anda gerçekleştirilemiyor.");
+    alert("Ödeme işlemi şu anda gerçekleştirilemiyor.");
 }
