@@ -93,3 +93,20 @@ if (temizleBtn) {
         }
     });
 }
+function odemeYap() {
+    let sepet = JSON.parse(localStorage.getItem('sepet')) || [];
+    
+    if (sepet.length === 0) {
+        alert("Sepetiniz boşken ödeme adımına geçemezsiniz! 🛒");
+        return;
+    }
+    
+
+    alert("Ödeme işlemi şu anda gerçekleştirilemiyor.");
+}
+
+
+const odemeBtn = document.getElementById('odeme-yap-btn');
+if (odemeBtn) {
+    odemeBtn.addEventListener('click', odemeYap);
+}
